@@ -46,11 +46,6 @@ class Functions:
         if markCount < 2:
             market.Window.opener()
             market.Main()
-            #exec(open('market.py').read(market.Window.opener))
-            #marketBlock= Toplevel()
-            #marketBlock.geometry("1069x900")
-            #marketlabel = Label(marketBlock, text= "Market Window").pack()
-            #marketButton = Button(marketBlock, text= "Close Window", command=marketBlock.destroy).pack()
     
         markCount +=1
 
@@ -118,8 +113,9 @@ class Buttons:
     mineButton = Button(tkWindow, image=Images.mine_button , command=None, borderwidth= 0)
     mineButton.place(x=380 , y=765)
 
-def exitProgram(exitBtn):
+def exitProgram(exitBtn, close_window):
     exitBtn.instance.destroy()
+    close_window.Window().opener().instance.destroy()
     
 exitBtn = Button(text="Exit", command=tkWindow.destroy)
 exitBtn.place(x=10, y= 100)

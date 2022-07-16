@@ -1,11 +1,11 @@
 from logging import root
 import sys
 import os
-path = '//Users//projose239//Documents//GitHub//Capstone-Proj//market.py'
+path = 'C:\\Users\\ProJo\\Documents\\GitHub\\Projects\\Windows Version\\market_win.py'
 sys.path.append(path)
 import tkinter
 from tkinter import*
-import market
+import market_win
 
 tkWindow =Tk()
 #tkWindow.geometry('550x800')
@@ -44,8 +44,8 @@ class Functions:
         global markCount
         
         if markCount < 2:
-            market.Window.opener()
-            market.Main()
+            market_win.Window.opener()
+            market_win.Main()
     
         markCount +=1
 
@@ -73,27 +73,27 @@ class Variables:
 
 class Images:
     #Images
-    background = PhotoImage(file="//Users/projose239//Documents//Senior Capstone//background_art.png")
+    background = PhotoImage(file="C:\\Users\\ProJo\\Documents\\GitHub\\Projects\\background_art.png")
     label = Label(tkWindow, image=background)
     label.place(x=0, y=0)
 
-    filip = PhotoImage(file="//Users//projose239//Documents//GitHub//Capstone-Proj//artwork-fillip//mini_apetransparent_png.png")
+    filip = PhotoImage(file="C:\\Users\\ProJo\\Documents\\GitHub\\Projects\\mini_apetransparent_png.png")
     labelfil = Label(tkWindow, image=filip)
     labelfil.place(x=210 , y=100)
 
-    inv_button = PhotoImage(file= "//Users//projose239//Documents//Senior Capstone//Buttons//inventory.png")
+    inv_button = PhotoImage(file="C:\\Users\\ProJo\\Documents\\GitHub\\Projects\\Buttons\\inventory.png")
     inv_label = Label(image=inv_button)
 
-    stats_button = PhotoImage(file= "//Users/projose239//Documents//Senior Capstone//Buttons//stats.png")
+    stats_button = PhotoImage(file="C:\\Users\\ProJo\\Documents\\GitHub\\Projects\\Buttons\\stats.png")
     stats_label = Label(image=stats_button)
 
-    market_button = PhotoImage(file= "//Users//projose239//Documents//Senior Capstone//Buttons//market.png")
+    market_button = PhotoImage(file="C:\\Users\\ProJo\\Documents\\GitHub\\Projects\\Buttons\\market.png")
     market_label = Label(image=market_button)
 
-    set_button = PhotoImage(file= "//Users//projose239//Documents//Senior Capstone//Buttons//settings.png")
+    set_button = PhotoImage(file="C:\\Users\\ProJo\\Documents\\GitHub\\Projects\\Buttons\\settings.png")
     img_label = Label(image=set_button)
 
-    mine_button = PhotoImage(file= "//Users//projose239//Documents//Senior Capstone//Buttons//bottom_menu_MineTouch 2.png")
+    mine_button = PhotoImage(file="C:\\Users\\ProJo\\Documents\\GitHub\\Projects\\Buttons\\bottom_menu_MineTouch 2.png")
     mine_label = Label(image=mine_button)
 
 class Buttons:

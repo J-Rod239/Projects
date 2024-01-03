@@ -33,6 +33,20 @@ def input_transactions():
         print("Please enter a valid integer for the number of transactions and valid floats for transaction amounts.")
         return None
 
+def credit_card_debt():
+    while True:
+        credit_card_response = input("Do you have credit card debt? (yes/no): ").lower()
+        if credit_card_response == 'yes':
+            try:
+                debt_amount = float(input("Enter the total credit card debt: "))
+                return debt_amount
+            except ValueError:
+                print("Please enter a valid number for the debt amount.")
+        elif credit_card_response == 'no':
+            return 0
+        else:
+            print("Please enter 'yes' or 'no'.")
+
 check_result = check_amount()
 bills_result = bills()
 
@@ -50,5 +64,8 @@ if check_result is not None and bills_result is not None:
         total_spent = sum(transactions_result)
         remaining_amount -= total_spent
         print("Remaining amount after transactions:", remaining_amount)
+
+    total_credit_card_debt = credit_card_debt()
+    print("Total credit card debt:", total_credit_card_debt)
 else:
     print("Program crashed")

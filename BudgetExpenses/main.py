@@ -24,11 +24,12 @@ if check_result is not None:
         # Subtract total spent from remaining_amount
         remaining_amount -= total_spent
 
-        print("Remaining amount after transactions:", remaining_amount)
+        print(f"Remaining amount after transactions:", remaining_amount)
+        debt_function = debt_data()
+        set_aside = check_amount * .2
+        print(f"You should use the 20%: $", set_aside, "from your current check")
         
     else:
-        print("Program crashed")
-else:
-    debt_function = debt_data()
-    set_aside = check_amount * .2
-    print(set_aside)
+        debt_function = debt_data()
+        set_aside = check_amount * .2
+        print(f"You should use the 20%: $", set_aside, "from your current check")

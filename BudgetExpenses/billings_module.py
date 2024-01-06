@@ -11,6 +11,10 @@ def bills():
                 while True:
                     try:
                         bill_total = float(input("Enter the total amount of the bill: "))
+                        if bill_total < 0:
+                            print("Please enter a non-negative amount for the bill.")
+                            continue
+
                         bill_type_input = input("Enter the type of bill (1 for regular bill, 2 for subscription): ")
                         bill_type = int(bill_type_input)
 
@@ -23,5 +27,8 @@ def bills():
                         print("Please enter valid numbers.")
 
             return bill_info_list
+
         except ValueError:
             print("Please enter a valid number for the total number of bills.")
+        finally:
+            break  # This will exit the outer loop regardless of exceptions

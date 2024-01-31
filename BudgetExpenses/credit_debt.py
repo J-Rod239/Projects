@@ -23,7 +23,10 @@ def debt_data(check_amount):
             
             months_to_pay_off = calculate_time_to_pay_off(debt_total, monthly_payment)
             
-            print(f"It will take approximately {months_to_pay_off} months to pay off the credit card debt.")
+            if months_to_pay_off > 1:
+                print(f"It will take approximately {months_to_pay_off} months to pay off the credit card debt.")
+            else:
+                print(f"It will take approximately less than one month to pay off the credit card debt.")
             
             return debt_total
         elif check_debt == "no":
@@ -31,3 +34,5 @@ def debt_data(check_amount):
             return 0  # Returning 0 as default value when there is no debt
         else:
             print("You must answer only yes or no.")
+
+            

@@ -28,7 +28,7 @@ if check_result is not None:
         remaining_amount -= (total_spent + total_bills)
 
         print(f"Remaining amount after transactions:", remaining_amount)
-        debt_function = debt_data()
+        debt_function = debt_data(remaining_amount)
         set_aside = check_amount * .2
         print("You should use the 20%: $", set_aside, " from your current check")
         sys.exit()
@@ -41,7 +41,9 @@ if check_result is not None:
         debt_total = debt_data(remaining_amount)
         set_aside_percentage = 0.2
         monthly_payment = remaining_amount * set_aside_percentage
-        months_to_pay_off = calculate_time_to_pay_off(debt_total, monthly_payment)        
-        print(f"You should use {set_aside_percentage * 100}%: ${monthly_payment} each month to pay off your credit card debt in approximately {months_to_pay_off} months.")
         
-
+        if debt_total <= monthly_payment:
+            print(f"You can pay off your credit card debt of ${debt_total} in this month.")
+        else:
+            months_to_pay_off = calculate_time_to_pay_off(debt_total, monthly_payment)        
+            print(f"You should use {set_aside_percentage * 100}%: ${monthly_payment} each month to pay off your credit card debt in approximately {months_to_pay_off} months.")

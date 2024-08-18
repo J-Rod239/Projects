@@ -1,0 +1,27 @@
+.nav-list {
+    list-style: none;
+    text-decoration: none;
+}
+
+.heading-primary {
+    text-align: center;
+}
+
+.text-primary {
+    text-align: center;
+}
+
+.btn {
+    padding: 1.5rem 8rem;
+    font-size: 2rem;
+    background: #7843E9;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    font-weight: 700;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+    transition: trasnform .3s;
+    text-decoration: none;
+}

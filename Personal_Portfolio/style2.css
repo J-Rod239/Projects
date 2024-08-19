@@ -1,8 +1,10 @@
 /* Reset some default styles */
 body, ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+    box-sizing: border-box;
+    position: relative;
+    line-height: 1.5;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 .header_logo-sub {
@@ -110,6 +112,37 @@ nav {
     transition: transform 0.3s;
     text-decoration: none;
 }
+
+.socials {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #fff;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: .5rem;
+}
+
+.social {
+    width: 5rem;
+}
+
+.social-icon-link {
+    width: 100%;
+    display: block;
+    padding: 1rem;
+    transition: background .3s;
+    border-radius: 5px;
+}
+
+.social-icon {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .about {
     height: 300px;
 }

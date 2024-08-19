@@ -1,30 +1,8 @@
-:root {
-    --background-color: #ffffff;
-    --text-color: #333333;
-    --link-color: #007bff;
-    --button-background: #7843E9;
-    --button-text: #ffffff;
-}
 /* Reset some default styles */
 body, ul {
     margin: 0;
     padding: 0;
     list-style: none;
-}
-
-body.light-mode {
-    background-color: var(--background-color);
-    color: var(--text-color);
-}
-
-body.dark-mode {
-    --background-color: #333333;
-    --text-color: #ffffff;
-    --link-color: #66b2ff;
-    --button-background: #4c288c;
-    --button-text: #ffffff;
-    background-color: var(--background-color);
-    color: var(--text-color);
 }
 
 .header_logo-sub {
@@ -94,7 +72,8 @@ nav {
 
 /* Ensure main content doesn't hide under header */
 #main {
-    padding-top: 80px; /* Adjust based on header height */
+    padding-top: 80px;
+    height: 400px; /* Adjust based on header height */
 }
 
 
@@ -131,50 +110,15 @@ nav {
     transition: transform 0.3s;
     text-decoration: none;
 }
-
-/* Switch styling */
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-    margin-left: 20px;
+.about {
+    height: 300px;
 }
 
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
+.about-text {
+    text-align: center;
 }
 
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: 0.4s;
-    border-radius: 34px;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    transition: 0.4s;
-    border-radius: 50%;
-}
-
-input:checked + .slider {
-    background-color: #7843E9; /* Adjust as needed */
-}
-
-input:checked + .slider:before {
-    transform: translateX(26px);
+.know-me {
+    margin-top: 40px;
+    text-align: center;
 }

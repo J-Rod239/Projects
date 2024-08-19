@@ -1,27 +1,180 @@
-.nav-list {
+:root {
+    --background-color: #ffffff;
+    --text-color: #333333;
+    --link-color: #007bff;
+    --button-background: #7843E9;
+    --button-text: #ffffff;
+}
+/* Reset some default styles */
+body, ul {
+    margin: 0;
+    padding: 0;
     list-style: none;
-    text-decoration: none;
 }
 
+body.light-mode {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+body.dark-mode {
+    --background-color: #333333;
+    --text-color: #ffffff;
+    --link-color: #66b2ff;
+    --button-background: #4c288c;
+    --button-text: #ffffff;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.header_logo-sub {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.header_logo-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: #333;
+    transition: color .3s;
+}
+
+/* Header styling */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f8f8f8; /* Adjust this color as needed */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+/* Nav styling */
+nav {
+    flex-grow: 1; /* This allows the nav to take up the remaining space */
+    display: flex;
+    justify-content: flex-end; /* Push the nav list to the right */
+}
+
+/* Nav list styling */
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* Space between the nav items */
+    margin-right: 20px;
+}
+
+/* Nav item styling */
+.nav-list li {
+    display: inline-block;
+}
+
+/* Nav link styling */
+.nav-list li a {
+    color: var(--text-color);
+    text-decoration: none;
+    color: #333; /* Adjust this color as needed */
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect for nav links */
+.nav-list li a:hover {
+    color: var(--link-color); /* Adjust hover color as needed */
+}
+
+/* Ensure main content doesn't hide under header */
+#main {
+    padding-top: 80px; /* Adjust based on header height */
+}
+
+
 .heading-primary {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 45px;
 }
 
 .text-primary {
     text-align: center;
+    margin-top: 20px;
 }
 
+/* Container holding the Projects button */
+.projects-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px; /* Optional: Adjust the space above the button */
+}
+
+/* Button styling */
 .btn {
-    padding: 1.5rem 8rem;
+    padding: 1.0rem 2rem;
     font-size: 2rem;
     background: #7843E9;
     color: #fff;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    display: inline-block;
+    letter-spacing: .5px;
     font-weight: 700;
-    border-radius: 5px;
+    border-radius: 20px;
     box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
-    transition: trasnform .3s;
+    transition: transform 0.3s;
     text-decoration: none;
+}
+
+/* Switch styling */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin-left: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #7843E9; /* Adjust as needed */
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
 }

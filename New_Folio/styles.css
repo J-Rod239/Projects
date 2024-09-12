@@ -17,6 +17,16 @@ div {
     height: 100vh; /* Full viewport height */
 }
 
+.scroll-indicator {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 2px;
+    background-color: white; /* Change color as needed */
+    opacity: 0.5;
+}
+
 .canvas {
     position: absolute;
     top: 0;
@@ -24,9 +34,10 @@ div {
     width: 100%;
     height: 100vh; /* Make the canvas full height */
     overflow: hidden;
+    display: block;
 }
 
-canvas.home-canvas {
+canvas.home-canvas, canvas.about-canvas, canvas.project-canvas {
     width: 100%;
     height: 100%; /* Make the canvas cover the entire section */
     display: block;
@@ -34,25 +45,63 @@ canvas.home-canvas {
 
 .heading {
     position: relative;
-    align-self: center;
+    z-index: 1; /* Bring the heading in front of the canvas */
     display: flex;
     flex-direction: column;
     align-items: center;
-    line-height: normal;
-    width: fit-content;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
-    font-weight: 300;
+    justify-content: center;
+    text-align: center;
     color: white;
 }
 
 .home-header, .home-text {
     font-size: 2.2rem;
+    margin-top: auto;
+}
+
+.home-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button {
+    padding: 25px 40px;
+    background-color: #007bff; /* Button background color */
+    color: white;
+    text-decoration: none;
+    border-radius: 40px;
+    font-size: 1.5rem;
+    border: none;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    margin-top: auto;
+    margin-bottom: 200px;
+}
+
+.button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+.button:active {
+    transform: scale(0.98); /* Slight shrink on click */
+}
+
+.heading {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    height: 100%; /* Ensure the heading section takes full height */
 }
 
 .about-me {
     text-align: center;
+    margin-top: 50px;
 }
 
 .about-content {
@@ -70,6 +119,7 @@ canvas.home-canvas {
     align-items: flex-start;
     max-width: 45%;
     padding: 0 20px;
+    margin-top: 50px;
 }
 .profile-text {
     font-size: 1.8rem;
@@ -84,6 +134,7 @@ canvas.home-canvas {
     flex-grow: 1;
     width: 45%;
     padding: 0 20px;
+    margin-top: 150px;
 }
 .skills-row {
     display: flex;
@@ -102,4 +153,65 @@ canvas.home-canvas {
     border-radius: 10px;
     background-origin: border-box;
     margin-bottom: 3rem;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #f0f0f0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    margin-top: 50px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #007bff;
+    transition: color 0.3s ease;
+}
+
+h1:hover {
+    color: #007bff; /* Color change on hover */
+}
+
+.project-title {
+    text-align: center;
+}
+
+img {
+    height: 150px;
+}
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 40px 20px;
+}
+
+.project-box {
+    width: 30%; /* Adjust based on screen size */
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.project-box:hover {
+    transform: translateY(-10px); /* Slight lift effect on hover */
+}
+
+.project-box img {
+    width: 100%;
+    height: 200px; /* Set a fixed height for images */
+    object-fit: cover; /* Ensure images fit the box */
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.project-box p {
+    font-size: 1.2rem;
+    margin-top: 10px;
 }
